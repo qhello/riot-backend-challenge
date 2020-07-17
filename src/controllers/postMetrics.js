@@ -21,4 +21,5 @@ export default async ctx => {
   CACHE[key].push(element)
 
   ctx.status = 200
+  ctx.body = {}
 }

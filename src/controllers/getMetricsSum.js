@@ -8,7 +8,9 @@ export default async ctx => {
   const { key } = ctx.params
 
   if (!CACHE[key]) {
-    ctx.body = 0
+    ctx.body = {
+      value: 0,
+    }
     return
   }
 
@@ -21,5 +23,7 @@ export default async ctx => {
   const valuesToSum = elementsToSum.map(({ value }) => value)
 
   // Sum them & return!
-  ctx.body = _.sum(valuesToSum)
+  ctx.body = {
+    value: _.sum(valuesToSum),
+  }
 }
